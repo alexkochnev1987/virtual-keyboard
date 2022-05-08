@@ -1,10 +1,11 @@
 export const en = [
-    {
-        small: '<',
-        shift: '>',
-        code: 'IntlBackslash',
-        keycode: '220',
-      },
+  {
+    small: '`',
+    shift: '~',
+    code: 'Backquote',
+    keycode: '192',
+  },
+
     {
       small: '1',
       shift: '!',
@@ -280,12 +281,19 @@ export const en = [
       code: 'ShiftLeft',
       keycode: '16',
     },
+
+
+
+
+
+
+
     {
-        small: '`',
-        shift: '~',
-        code: 'Backquote',
-        keycode: '192',
-      },
+      small: '<',
+      shift: '>',
+      code: 'IntlBackslash',
+      keycode: '220',
+    },
     {
       small: 'z',
       shift: 'Z',
@@ -349,7 +357,7 @@ export const en = [
     {
         small: '↑',
         shift: null,
-        code: 'ArrowDown',
+        code: 'ArrowUp',
         keycode: '40',
       },
     {
@@ -366,17 +374,18 @@ export const en = [
       keycode: '17',
     },
     {
-        small: '⌘ cmd',
-        shift: null,
-        code: 'CommandLeft',
-        keycode: '91',
-      },
-    {
       small: 'Alt',
       shift: null,
       code: 'AltLeft',
       keycode: '18',
     },
+    {
+        small: '⌘ cmd',
+        shift: null,
+        code: 'MetaLeft',
+        keycode: '91',
+      },
+
     {
       small: ' ',
       shift: null,
@@ -386,7 +395,7 @@ export const en = [
     {
         small: '⌘ cmd',
         shift: null,
-        code: 'CommandRight',
+        code: 'MetaRight',
         keycode: '91',
       },
     {
@@ -405,7 +414,7 @@ export const en = [
     {
       small: '↓',
       shift: null,
-      code: 'ArrowUp',
+      code: 'ArrowDown',
       keycode: '38',
     },
 

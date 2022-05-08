@@ -162,6 +162,36 @@ document.onkeyup = function(e){
   document.querySelector(keySelector).classList.remove('active');
 }
 
+document.querySelectorAll('.key').forEach(function(element){
+  element.addEventListener('mousedown', (e)=>{
+  let pressedKey = e.currentTarget;
+  pressedKey.classList.add('active');
+  
+})
+})
+
+document.querySelectorAll('.key').forEach(function(element){
+  element.addEventListener('mouseup', (e)=>{
+  let pressedKey = e.currentTarget;
+  pressedKey.classList.remove('active');
+})
+})
+
+
+
+// document.querySelectorAll('.key').forEach(function(element){
+//   if(element.mousedown) {
+//     element.mousedown = function(e) {
+//       
+//     } 
+//   } else {
+//       element.mouseup = function(e){
+//         let pressedKey = e.currentTarget;
+//         pressedKey.classList.remove('active');
+//       }
+//   }
+// })
+
 
 
 

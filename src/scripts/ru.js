@@ -373,7 +373,7 @@ export const ru = [
     {
         small: '⌘ cmd',
         shift: null,
-        code: 'CommandLeft',
+        code: 'MetaLeft',
         keycode: '91',
       },
     {
@@ -385,7 +385,7 @@ export const ru = [
     {
         small: '⌘ cmd',
         shift: null,
-        code: 'CommandRight',
+        code: 'MetaRight',
         keycode: '91',
       },
     {
