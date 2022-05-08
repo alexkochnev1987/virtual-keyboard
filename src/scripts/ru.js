@@ -79,7 +79,7 @@ export const ru = [
     },
     {
       small: 'Backspace',
-      shift: null,
+      shift: 'Backspace',
       code: 'Backspace',
       keycode: '8',
     },
@@ -91,7 +91,7 @@ export const ru = [
 
     {
       small: 'Tab',
-      shift: null,
+      shift: 'Tab',
       code: 'Tab',
       keycode: '9',
     },
@@ -169,7 +169,7 @@ export const ru = [
     },
     {
         small: 'Delete',
-        shift: null,
+        shift: 'Delete',
         code: 'Delete',
         keycode: '46',
       },
@@ -181,7 +181,7 @@ export const ru = [
 
     {
         small: 'CapsLock',
-        shift: null,
+        shift: 'CapsLock',
         code: 'CapsLock',
         keycode: '0',
       },
@@ -259,7 +259,7 @@ export const ru = [
       },
     {
         small: 'Enter',
-        shift: null,
+        shift: 'Enter',
         code: 'Enter',
         keycode: '13',
       },
@@ -270,7 +270,7 @@ export const ru = [
 
     {
       small: 'Shift',
-      shift: null,
+      shift: 'Shift',
       code: 'ShiftLeft',
       keycode: '16',
     },
@@ -342,14 +342,14 @@ export const ru = [
     },
     {
         small: '↑',
-        shift: null,
+        shift: '↑',
         code: 'ArrowUp',
         keycode: '38',
       },
 
     {
       small: 'Shift',
-      shift: null,
+      shift: 'Shift',
       code: 'ShiftRight',
       keycode: '16',
     },
@@ -360,64 +360,64 @@ export const ru = [
 
     {
       small: 'Ctrl',
-      shift: null,
+      shift: 'Ctrl',
       code: 'ControlLeft',
       keycode: '17',
     },
     {
       small: 'Alt',
-      shift: null,
+      shift: 'Alt',
       code: 'AltLeft',
       keycode: '18',
     },
     {
         small: '⌘ cmd',
-        shift: null,
+        shift: '⌘ cmd',
         code: 'MetaLeft',
         keycode: '91',
       },
     {
       small: ' ',
-      shift: null,
+      shift: ' ',
       code: 'Space',
       keycode: '32',
     },
     {
         small: '⌘ cmd',
-        shift: null,
+        shift: '⌘ cmd',
         code: 'MetaRight',
         keycode: '91',
       },
     {
       small: 'Alt',
-      shift: null,
+      shift: 'Alt',
       code: 'AltRight',
       keycode: '225',
     },
 
     {
       small: '←',
-      shift: null,
+      shift: '←',
       code: 'ArrowLeft',
       keycode: '37',
     },
 
     {
       small: '↓',
-      shift: null,
+      shift: '↓',
       code: 'ArrowDown',
       keycode: '40',
     },
     {
       small: '→',
-      shift: null,
+      shift: '→',
       code: 'ArrowRight',
       keycode: '39',
     },
 
     {
         small: 'fn',
-        shift: null,
+        shift: 'fn',
         code: 'fn',
         keycode: '1000',
       },
