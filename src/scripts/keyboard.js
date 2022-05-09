@@ -1,6 +1,7 @@
 import {ru} from './ru'
 import {en} from './en' 
-import { forEach } from 'lodash';
+import { forEach } from 'lodash'
+import {addClassShift, removeClassShift, addCapsLock, removeCapsLock, removeCapsNumbers} from './addClass'
 
 document.onkeypress = function(event){
   console.log(event);
@@ -64,7 +65,8 @@ const Keyboard = {
       row5:null,
     },
     language:null,
-    capsLock:null,
+    capsLock:false,
+    shift:false,
   },
 
   init (){
@@ -149,6 +151,8 @@ Keyboard.init();
 
 
 let textarea = document.querySelector('#textarea');
+let capsLock = document.querySelector('.CapsLock');
+
 let pressed = new Set();
 
 document.addEventListener('keydown',function(e) {
@@ -177,12 +181,10 @@ document.addEventListener('keydown',function(e) {
   }
 })
 
+
 document.addEventListener('keyup', function(e){
   pressed.delete(e.code);
 })
-
-
-
 
 
 
@@ -191,15 +193,31 @@ document.onkeydown = function(e) {
   let keySelector = '.' + e.code;
   let pressedKey = document.querySelector(keySelector);
   if (e.code !== "CapsLock"){
-    pressedKey.classList.toggle('active');
-  } else {
     pressedKey.classList.add('active');
   }
   if(e.code === "Backspace"){
     textarea.value = textarea.value.substr(0,textarea.value.length-1)
-  } else if(e.code === 'ControlLeft'|| e.code === 'MetaLeft'||e.code === 'MetaRight'||e.code === 'AltLeft'|| e.code === 'AltRight'||e.code === 'ShiftLeft'|| e.code === 'ShiftRight'||e.code === "CapsLock") {
+  } else if(e.code === 'ControlLeft'|| e.code === 'MetaLeft'||e.code === 'MetaRight'||e.code === 'AltLeft'|| e.code === 'AltRight') {
   } else if(e.code === 'Enter'){
     textarea.value +="\n"
+  } else if (e.code === 'ShiftLeft'|| e.code === 'ShiftRight'){
+    if(Keyboard.capsLock){
+      removeClassShift();
+    } else{
+      addClassShift();
+    }
+  } else if (e.code === "CapsLock"){
+    pressedKey.classList.toggle('active');
+    if(pressedKey.classList.contains('active')){
+      Keyboard.capsLock = true;
+    } else {
+      Keyboard.capsLock = false;
+    }
+    if(Keyboard.capsLock){
+      addCapsLock();
+    } else {
+      removeCapsLock();
+    }
   } else if (e.code === "Tab"){
     textarea.value +="    ";
   }else if (e.code === "ArrowUp"||e.code === "ArrowRight"||e.code === "ArrowLeft"||e.code === "ArrowDown"){
@@ -214,16 +232,19 @@ document.onkeyup = function(e){
   document.querySelectorAll(keySelector).forEach(elem => {
     if(e.code === 'CapsLock'){ 
       
+    } else if (e.code === 'ShiftLeft'|| e.code === 'ShiftRight'){
+      if(Keyboard.capsLock){
+        addClassShift();
+      } else {
+        removeClassShift();
+      }
+      elem.classList.remove('active');
     } else {
       elem.classList.remove('active');
     }
   })
 }
 
-// document.addEventListener('keydown',function(e) {
-//   document.querySelector('.CapsLock').classList.toggle('active');
-
-// })
 
 document.querySelectorAll('.key').forEach(function(element){
   element.addEventListener('mousedown', (e)=>{
@@ -236,8 +257,25 @@ document.querySelectorAll('.key').forEach(function(element){
   }
   if (pressedKey.innerText === 'Backspace'){
     textarea.value = textarea.value.substr(0,textarea.value.length-1)
-  } else if (pressedKey.innerText === 'Shift'|| pressedKey.innerText === 'Ctrl'||pressedKey.innerText === 'CapsLock'||pressedKey.innerText === '⌘ cmd'|| pressedKey.innerText === 'Alt') {
+  } else if (pressedKey.innerText === 'Ctrl' || pressedKey.innerText === '⌘ cmd'|| pressedKey.innerText === 'Alt') {
 
+  }else if (pressedKey.innerText === 'Shift'){
+    if(Keyboard.capsLock){
+      removeClassShift();
+    } else{
+      addClassShift();
+    }
+  }else if (pressedKey.innerText === 'CapsLock') {
+    if(pressedKey.classList.contains('active')){
+      Keyboard.capsLock = true;
+    } else {
+      Keyboard.capsLock = false;
+    }
+    if(Keyboard.capsLock){
+      addCapsLock();
+    } else {
+      removeCapsLock();
+    }
   }else if(pressedKey.innerText === 'Enter'){
     textarea.value +="\n"
   }else if(pressedKey.innerText === 'Tab'){
@@ -254,7 +292,14 @@ document.querySelectorAll('.key').forEach(function(element){
 document.querySelectorAll('.key').forEach(function(element){
   element.addEventListener('mouseup', (e)=>{
   let pressedKey = e.currentTarget;
-  if(pressedKey.innerText !== 'CapsLock'){
+  if(pressedKey.innerText === 'Shift'){
+    pressedKey.classList.remove('active');
+    if(Keyboard.capsLock){
+      addClassShift();
+    } else {
+      removeClassShift();
+    }
+  } else if(pressedKey.innerText !== 'CapsLock'){
     pressedKey.classList.remove('active');
   }
 })
