@@ -67,10 +67,6 @@
 .key:hover {
     background:#79aa89
 }
-.key.active {
-    background-color:#2cfd72;
-    border-radius:50px
-}
 .MetaRight, .MetaLeft, .keyboard .AltLeft,.keyboard .AltRight,.keyboard .ArrowUp,.keyboard .ArrowLeft,.keyboard .ArrowDown,.keyboard .ArrowRight,.keyboard .Backspace,.keyboard .CapsLock,.keyboard .ControlLeft,.keyboard .ControlRight,.keyboard .Delete,.keyboard .Enter,.keyboard .ShiftLeft,.keyboard .ShiftRight,.keyboard .Tab,.keyboard .MetaLeft {
     font-weight:600;
     background-color:#222222
@@ -104,3 +100,7 @@
     width: 32px;
 }
 
+.key.active {
+    background-color:#2cfd72;
+    border-radius:50px
+}
