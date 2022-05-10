@@ -24,22 +24,20 @@ document.addEventListener('keydown', (e) => {
     if (Keyboard.language === 'eng') {
       Keyboard.language = 'rus';
       lang.lang = Keyboard.language;
-      // console.log (lang);
       document.querySelectorAll('.rus').forEach((element) => {
-        element.classList.toggle('hidden');
+        element.classList.remove('hidden');
       });
       document.querySelectorAll('.eng').forEach((element) => {
-        element.classList.toggle('hidden');
+        element.classList.add('hidden');
       });
     } else {
       Keyboard.language = 'eng';
       lang.lang = Keyboard.language;
-      // console.log(lang);
       document.querySelectorAll('.rus').forEach((element) => {
-        element.classList.toggle('hidden');
+        element.classList.add('hidden');
       });
       document.querySelectorAll('.eng').forEach((element) => {
-        element.classList.toggle('hidden');
+        element.classList.remove('hidden');
       });
     }
   }
